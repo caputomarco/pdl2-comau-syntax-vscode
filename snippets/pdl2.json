@@ -1,0 +1,314 @@
+{
+    "PROGRAM": {
+        "prefix": "PROGRAM",
+        "body": [
+            "PROGRAM ${1:progName} ${2| ,PROG_ARM = 1,NOHOLD|} ${3| ,\\, STACK = 4096|}",
+            "",
+            "BEGIN",
+            "  ",
+            "  $0",
+            "  ",
+            "END  ${1:progName}"
+        ],
+        "description": "PDL2 Program"
+    },
+    "ROUTINE": {
+        "prefix": "ROUTINE",
+        "body": [
+            "ROUTINE ${1:routName}",
+            "",
+            "BEGIN",
+            "  ",
+            "  $0",
+            "  ",
+            "END ${1:routName}"
+        ],
+        "description": "PDL2 Routine"
+    },
+    "ROUTINE (1 ARG)": {
+        "prefix": "ROUTINE",
+        "body": [
+            "ROUTINE ${1:routName} (${2:argName} : ${3| ,INTEGER,REAL,BOOLEAN,POSITION,JOINTPOS,VECTOR,STRING[128]|})",
+            "",
+            "BEGIN",
+            "  ",
+            "  $0",
+            "  ",
+            "END ${1:routName}"
+        ],
+        "description": "PDL2 Routine"
+    },
+    "ROUTINE (2 ARG)": {
+        "prefix": "ROUTINE",
+        "body": [
+            "ROUTINE ${1:routName} (${2:argName} : ${3| ,INTEGER,REAL,BOOLEAN,POSITION,JOINTPOS,VECTOR,STRING[128]|} ; ${4:argName} : ${5| ,INTEGER,REAL,BOOLEAN,POSITION,JOINTPOS,VECTOR,STRING[128]|})",
+            "",
+            "BEGIN",
+            "  ",
+            "  $0",
+            "  ",
+            "END ${1:routName}"
+        ],
+        "description": "PDL2 Routine"
+    },
+    "IMPORT": {
+        "prefix": "IMPORT",
+        "body": [
+            "IMPORT '${1:progName}'"
+        ],
+        "description": "PDL2 import routine of Program"
+    },
+    "CONDITION": {
+        "prefix": "CONDITION",
+        "body": [
+            "CONDITION [${1:condNum}] ${2| ,NODISABLE,ATTACH,SCAN(50)]|}:",
+            "  WHEN $0 DO",
+            "    ",
+            "ENDCONDITION"
+        ],
+        "description": "PDL2 interrupt"
+    },
+    "RECORD": {
+        "prefix": "TYPE,RECORD",
+        "body": [
+            "TYPE ${1:recordTypeName} = RECORD",
+            "  ${2:varName} : ${3| ,INTEGER,REAL,BOOLEAN,POSITION,JOINTPOS,VECTOR,STRING[128]|}",
+            "  $0",
+            "ENDRECORD"
+        ],
+        "description": "PDL2 record"
+    },
+    "NODEDEF": {
+        "prefix": "TYPE,NODEDEF",
+        "body": [
+            "TYPE ${1:typeName} = NODEDEF",
+            "  ${2:varName} : ${3| ,INTEGER,REAL,BOOLEAN,POSITION,JOINTPOS,VECTOR,STRING[128]|}",
+            "  $0",
+            "ENDNODEDEF"
+        ],
+        "description": "PDL2 node definition"
+    },
+
+    "FOR...ENDFOR": {
+        "prefix": "FOR",
+        "body": [
+            "FOR ${1:counter} := ${2:start} TO ${3:end} DO",
+            "  $0",
+            "ENDFOR"
+        ],
+        "description": "For loop"
+    },
+    "WHILE...ENDWHILE": {
+        "prefix": "WHILE",
+        "body": [
+            "WHILE ${1:condition} DO",
+            "  $0",
+            "ENDWHILE"
+        ],
+        "description": "While loop"
+    },
+    "REPEAT...UNTIL": {
+        "prefix": "REPEAT",
+        "body": [
+            "REPEAT",
+            "  $0",
+            "UNTIL (${1:condition})"
+        ],
+        "description": "Repeat loop"
+    },
+
+    "IF...ENDIF": {
+        "prefix": "IF",
+        "body": [
+            "IF ${1:condition} THEN",
+            "  $0",
+            "ENDIF"
+        ],
+        "description": "If endif"
+    },
+    "IF..ELSE..ENDIF": {
+        "prefix": "IF",
+        "body": [
+            "IF ${1:condition} THEN",
+            "  $0",
+            "ELSE",
+            "  ",
+            "ENDIF"
+        ],
+        "description": "If else endif"
+    },
+    "Switch statement": {
+        "prefix": "SELECT",
+        "body": [
+            "SELECT ${1:variable} OF",
+            "  CASE (${2:switch}):",
+            "    $0",
+            "  CASE (${3:switch}):",
+            "    ",
+            "  ELSE:",
+            "    ",
+            "ENDSELECT"
+        ],
+        "description": "Switch/Select case statement"
+    },   
+
+    "CONST": {
+        "prefix": "CONST",
+        "body": [
+            "CONST ${1:constName} = ${2:constValue}"
+        ],
+        "description": "Const declaration"
+    },
+    "VAR": {
+        "prefix": "VAR",
+        "body": [
+            "VAR ${1:varName} : ${2| ,INTEGER,REAL,BOOLEAN,POSITION,JOINTPOS,VECTOR,STRING[128]|} ${3| ,EXPORTED FROM |}"
+        ],
+        "description": "Generic Var declaration"
+    },
+    "dataType": {
+        "prefix": ":dataType",
+        "body": [
+            ": ${2| ,INTEGER,REAL,BOOLEAN,POSITION,JOINTPOS,VECTOR,STRING[128]|}"
+        ],
+        "description": "Generic Var declaration"
+    },
+    "STRING": {
+        "prefix": "STRING",
+        "body": [
+            "STRING[${1:lenghtString}]"
+        ],
+        "description": "String"
+    },
+    "VAR STRING Array": {
+        "prefix": "VAR,STRING,ARRAY",
+        "body": [
+            "VAR ${1:arrayName} : ARRAY[${2:lenghtArray}] OF STRING[${3:lenghtString}]"
+        ],
+        "description": "String Array"
+    },
+    "VAR ARRAY DIM 1": {
+        "prefix": "VAR,ARRAY",
+        "body": [
+            "VAR ${1:arrayName} : ARRAY[${2:dim}] OF ${3| ,INTEGER,REAL,BOOLEAN,POSITION,JOINTPOS,VECTOR,STRING[128]|}"
+        ],
+        "description": "PDL2 Array of Type"
+    },
+    "VAR ARRAY DIM 2": {
+        "prefix": "VAR,ARRAY",
+        "body": [
+            "VAR ${1:arrayName} : ARRAY[${2:rowNum},${3:colNum}] OF ${4| ,INTEGER,REAL,BOOLEAN,POSITION,JOINTPOS,VECTOR,STRING[128]|}"
+        ],
+        "description": "PDL2 Array 2 DIM of Type"
+    },
+    "EXPORTED FROM": {
+        "prefix": "EXPORTED FROM",
+        "body": [
+            "EXPORTED FROM ${1:progName}"
+        ],
+        "description": "PDL2 export/import variable"
+    },
+    "WRITE LUN_CRT": {
+        "prefix": "write lun_crt",
+        "body": [
+            "WRITE LUN_CRT($0, NL)"
+        ],
+        "description": "PDL2 WRITE LUN_CRT"
+    },
+    "WRITE LUN_TP": {
+        "prefix": "write lun_tp",
+        "body": [
+            "WRITE LUN_TP($0, NL)"
+        ],
+        "description": "PDL2 WRITE LUN_TP"
+    },
+    "FORMAT SPECIFIER INTEGER": {
+        "prefix": "::INT",
+        "body": [
+            "::${1:Max Chars}::${3:(1 OCT - 2 HEX - 3 CHAR - 4 BIN - 5 DEC)})"
+        ],
+        "description": "FORMAT SPECIFIER INTEGER"
+    },
+    "ERR_POST [BUILT-IN]": {
+        "prefix": "ERR_POST",
+        "body": [
+            "ERR_POST(${1:err_num}, ${2:err_str}, ${3:err_sev})"
+        ],
+        "description": "Error Message \n[UserRange 43008-44031]\n Severity: \n• 2 : Warning \n• 4 : Pause, hold if holdable \n• 6 : Pause all, hold if holdable \n• 8 : Hold \n• 10 : DRIVE OFF \n\n"
+    },
+    "ERR_TRAP_ON [BUILT-IN]": {
+        "prefix": "ERR_TRAP_ON",
+        "body": [
+            "ERR_TRAP_ON(${1:err_num})"
+        ],
+        "description": "Procedure turns error trapping ON \nfor the specified errors \n[from 39937 to 40109] \n\n"
+    },
+    "ERR_TRAP_OFF [BUILT-IN]": {
+        "prefix": "ERR_TRAP_OFF",
+        "body": [
+            "ERR_TRAP_OFF(${1:err_num})"
+        ],
+        "description": "Procedure turns error trapping OFF \nfor the specified errors \n[from 39937 to 40109] \n\n"
+    },
+    "POS": {
+        "prefix": "POS",
+        "body": [
+            "POS(${1:x}, ${2:y}, ${3:z}, ${4:a}, ${5:e}, ${6:r}, '')"
+        ],
+        "description": "POSITION"
+    },
+    "STR_LOC [BUILT-IN]": {
+        "prefix": "STR_LOC",
+        "body": [
+            "STR_LOC(${1:original_string}, ${2:find_me}, ${3:<start_from>})"
+        ],
+        "description": "Function returns the location, in a STRING, where a specified sequence of characters begins. \n - original_string: is the string in which find_me is to be searched for. \n - find_me: is the string to be searched for; if find_me is not found, zero is returned. \n - start_from: is an optional integer parameter which indicates the direction of searching and the index where to start searching. \n   If not specified or 0, find_me is searched for starting from the beginning of original_string"
+    },
+    "STR_XTRT [BUILT-IN]": {
+        "prefix": "STR_XTRT",
+        "body": [
+            "STR_XTRT(${1:source_str}, ${2:start_index}, ${3:substring_length}, ${4:dest_str})"
+        ],
+        "description": "The STR_XTRT built-in procedure obtains a substring from a specified STRING. \n - source_string: is the source STRING which the substring is to be extracted from. It will remain unchanged. \n - start_index: is an index indicating where to start copying. \n - start_index: must be between zero and the current length of the source_str. A value out of this range will cause an error even if the source_str has a maximum length greater than the length of its current value. \n - substring_length: is the number of being copied characters. If it is <0, an error will occur. If it is >= the number of characters from start_index to the end of source_string, then all characters are copied into dest_string. \n - dest_string: is the STRING that will hold the copied substring. If the length of the result is greater than the declared length of dest_string, then the result is truncated.\n"
+    },
+    
+    "MOVE TO": {
+        "prefix": "MOVE TO",
+        "body": [
+            "${1|MOVE,MOVEFLY|} ${2|TO,LINEAR TO,JOINT TO|} ${3:destination} ${4| ,ADVANCE|}"
+        ],
+        "description": "MOVE TO moves the designated arm to a specified destination.\n\n"
+    },
+    
+    "MOVE ABOUT": {
+        "prefix": "MOVE ABOUT",
+        "body": [
+            "MOVE ABOUT VEC(0, 0, 0) BY ${1:rotation in degrees} IN ${2|TOOL,BASE,UFRAME|}"
+        ],
+        "description": "MOVE ABOUT allows the programmer to specify a destination that is reached by rotating the tool an angular distance about a specified vector from the current position. The angle, a real expression, represents the rotation in degrees about the vector, using the specified coordinate frame.\n\n"
+    },
+
+    "MOVE RELATIVE": {
+        "prefix": "MOVE RELATIVE",
+        "body": [
+            "MOVE ${1|RELATIVE,LINEAR RELATIVE|} VEC(0, 0, 0) IN ${2|TOOL,BASE,UFRAME|}"
+        ],
+        "description": "MOVE RELATIVE allows the programmer to specify a destination relative to the current location of the arm. The destination is indicated by a vector expression, measured in millimeters, using the specified coordinate frame.\n\n"
+    },
+
+    "MOVE NEAR": {
+        "prefix": "MOVE NEAR",
+        "body": [
+            "MOVE NEAR ${1:destination} BY ${2: distance from a position [mm]}"
+        ],
+        "description": "MOVE NEAR allows the programmer to specify a destination along the tool approach vector that is within a specified distance from a position.\n\n"
+    },
+    
+    "MOVE AWAY": {
+        "prefix": "MOVE AWAY",
+        "body": [
+            "MOVE AWAY ${1: distance away from the current position [mm]}"
+        ],
+        "description": "MOVE AWAY allows the programmer to specify a destination along the tool approach vector that is a specified distance away from the current position.\n\n"
+    }
+}

@@ -1,0 +1,115 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+
+    "editor.tokenColorCustomizations": { 
+        "[Visual Studio Dark]": {
+            "textMateRules": [
+                {
+                    "scope": 
+                        ["support.function.pdl2"
+                        ],
+                    "settings": {
+                        "foreground": "#FFC042",
+                    },
+                    
+                },
+                
+                {
+                    "scope": 
+                        ["support.variable.pdl2"
+                        ],
+                    "settings": {
+                        "foreground": "#fd8235",
+                    },
+                    
+                },
+                {
+                    "scope": 
+                        ["keyword.operator.logical.pdl2",
+                        "keyword.operator.comparison.pdl2",
+                        "keyword.operator.arithmetic.pdl2",
+                        "keyword.operator.assignment.pdl2"
+                        ],
+                    "settings": {
+                        "foreground": "#FFC042",
+                    },
+                    
+                },
+                
+                {
+                    "scope": 
+                        ["support.type.pdl2"
+
+                        ],
+                    "settings": {
+                        "foreground": "#358CD6",
+                    },
+                    
+                },
+
+                {
+                    "scope": 
+                        ["constant.language.pdl2",
+                        "constant.numeric.pdl2"
+
+                        ],
+                    "settings": {
+                        "foreground": "#DA265E",
+                    },
+                    
+                }
+            ]
+        },
+        "[Monokai]": {
+            "textMateRules": [
+               
+                {
+                    "scope": 
+                        ["support.variable.pdl2"
+                        ],
+                    "settings": {
+                        "foreground": "#fd8235",
+                    },
+                    
+                }
+            ]
+        },
+    },
+
+
+    "workbench.colorTheme": "Visual Studio Dark",
+
+    "codemap.pds": [
+        {
+            "pattern": "(?=[^--])(?<![^\\r\\n\\t\\f\\v])PROGRAM (.*?)\\w+",
+            "clear": "PROGRAM",
+            "prefix": "",
+            "role": "class",
+            "icon": "class"
+        },
+        {
+            "pattern": "(?=[^--])(?<![^\\r\\n\\t\\f\\v])ROUTINE (.*?)\\w+",
+            "clear": "ROUTINE",
+            "suffix": "()",
+            "role": "function",
+            "icon": "function"
+        }
+    ],
+    "codemap.pdl": [
+        {
+            "pattern": "(?=[^--])(?<![^\\r\\n\\t\\f\\v])PROGRAM (.*?)\\w+",
+            "clear": "PROGRAM",
+            "prefix": "",
+            "role": "class",
+            "icon": "class"
+        },
+        {
+            "pattern": "(?=[^--])(?<![^\\r\\n\\t\\f\\v])ROUTINE (.*?)\\w+",
+            "clear": "ROUTINE",
+            "suffix": "()",
+            "role": "function",
+            "icon": "function"
+        }
+    ],
+
+}
