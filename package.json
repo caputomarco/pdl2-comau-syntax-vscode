@@ -1,9 +1,9 @@
 {
   "name": "pdl2-comau-syntax",
   "displayName": "PDL2 Comau Syntax",
-  "description": "PDL2 Comau Robot programming language",
+  "description": "PDL2 Comau Robot C5G/C5GPlus programming language support for Visual Studio Code",
   "icon": "images/icon.png",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "MarcoCaputo",
   "engines": {
     "vscode": "^1.29.0"
