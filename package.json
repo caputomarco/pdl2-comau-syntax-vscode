@@ -1,10 +1,10 @@
 {
-  "name": "pdl2-comau",
+  "name": "pdl2-comau-syntax",
   "displayName": "PDL2 Comau Syntax",
   "description": "PDL2 Comau Robot programming language",
   "icon": "images/icon.png",
   "version": "1.0.0",
-  "publisher": "Marco Caputo",
+  "publisher": "MarcoCaputo",
   "engines": {
     "vscode": "^1.29.0"
   },
@@ -13,8 +13,16 @@
     "url": "https://github.com/caputomarco/pdl2-comau-syntax-vscode.git"
   },
   "categories": [
-    "Programming Languages"
-  ],
+    "Programming Languages",
+    "Snippets",
+    "Other"
+],
+"keywords": [
+    "pdl",
+    "pdl2",
+    "comau",
+    "robot"
+],
   "contributes": {
     "languages": [
       {
