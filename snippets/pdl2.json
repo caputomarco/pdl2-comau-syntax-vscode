@@ -1,5 +1,5 @@
 {
-    "PROGRAM": {
+    "PROGRAM [QUICK]": {
         "prefix": "PROGRAM",
         "body": [
             "PROGRAM ${1:progName} ${2| ,PROG_ARM = 1,NOHOLD|} ${3| ,\\, STACK = 4096|}",
@@ -12,7 +12,7 @@
         ],
         "description": "PDL2 Program"
     },
-    "ROUTINE": {
+    "ROUTINE [QUICK]": {
         "prefix": "ROUTINE",
         "body": [
             "ROUTINE ${1:routName}",
@@ -25,7 +25,7 @@
         ],
         "description": "PDL2 Routine"
     },
-    "ROUTINE (1 ARG)": {
+    "ROUTINE (1 ARG) [QUICK]": {
         "prefix": "ROUTINE",
         "body": [
             "ROUTINE ${1:routName} (${2:argName} : ${3| ,INTEGER,REAL,BOOLEAN,POSITION,JOINTPOS,VECTOR,STRING[128]|})",
@@ -38,7 +38,7 @@
         ],
         "description": "PDL2 Routine"
     },
-    "ROUTINE (2 ARG)": {
+    "ROUTINE (2 ARG) [QUICK]": {
         "prefix": "ROUTINE",
         "body": [
             "ROUTINE ${1:routName} (${2:argName} : ${3| ,INTEGER,REAL,BOOLEAN,POSITION,JOINTPOS,VECTOR,STRING[128]|} ; ${4:argName} : ${5| ,INTEGER,REAL,BOOLEAN,POSITION,JOINTPOS,VECTOR,STRING[128]|})",
@@ -51,14 +51,14 @@
         ],
         "description": "PDL2 Routine"
     },
-    "IMPORT": {
+    "IMPORT [QUICK]": {
         "prefix": "IMPORT",
         "body": [
             "IMPORT '${1:progName}'"
         ],
         "description": "PDL2 import routine of Program"
     },
-    "CONDITION": {
+    "CONDITION [QUICK]": {
         "prefix": "CONDITION",
         "body": [
             "CONDITION [${1:condNum}] ${2| ,NODISABLE,ATTACH,SCAN(50)]|}:",
@@ -68,7 +68,7 @@
         ],
         "description": "PDL2 interrupt"
     },
-    "RECORD": {
+    "RECORD [QUICK]": {
         "prefix": "TYPE,RECORD",
         "body": [
             "TYPE ${1:recordTypeName} = RECORD",
@@ -78,7 +78,7 @@
         ],
         "description": "PDL2 record"
     },
-    "NODEDEF": {
+    "NODEDEF [QUICK]": {
         "prefix": "TYPE,NODEDEF",
         "body": [
             "TYPE ${1:typeName} = NODEDEF",
@@ -88,8 +88,7 @@
         ],
         "description": "PDL2 node definition"
     },
-
-    "FOR...ENDFOR": {
+    "FOR...ENDFOR [QUICK]": {
         "prefix": "FOR",
         "body": [
             "FOR ${1:counter} := ${2:start} TO ${3:end} DO",
@@ -98,7 +97,7 @@
         ],
         "description": "For loop"
     },
-    "WHILE...ENDWHILE": {
+    "WHILE...ENDWHILE [QUICK]": {
         "prefix": "WHILE",
         "body": [
             "WHILE ${1:condition} DO",
@@ -107,7 +106,7 @@
         ],
         "description": "While loop"
     },
-    "REPEAT...UNTIL": {
+    "REPEAT...UNTIL [QUICK]": {
         "prefix": "REPEAT",
         "body": [
             "REPEAT",
@@ -116,8 +115,7 @@
         ],
         "description": "Repeat loop"
     },
-
-    "IF...ENDIF": {
+    "IF...ENDIF [QUICK]": {
         "prefix": "IF",
         "body": [
             "IF ${1:condition} THEN",
@@ -126,7 +124,7 @@
         ],
         "description": "If endif"
     },
-    "IF..ELSE..ENDIF": {
+    "IF..ELSE..ENDIF [QUICK]": {
         "prefix": "IF",
         "body": [
             "IF ${1:condition} THEN",
@@ -137,7 +135,7 @@
         ],
         "description": "If else endif"
     },
-    "Switch statement": {
+    "SELECT [QUICK]": {
         "prefix": "SELECT",
         "body": [
             "SELECT ${1:variable} OF",
@@ -150,91 +148,304 @@
             "ENDSELECT"
         ],
         "description": "Switch/Select case statement"
-    },   
-
-    "CONST": {
+    },
+    "CONST [QUICK]": {
         "prefix": "CONST",
         "body": [
             "CONST ${1:constName} = ${2:constValue}"
         ],
         "description": "Const declaration"
     },
-    "VAR": {
+    "VAR [QUICK]": {
         "prefix": "VAR",
         "body": [
             "VAR ${1:varName} : ${2| ,INTEGER,REAL,BOOLEAN,POSITION,JOINTPOS,VECTOR,STRING[128]|} ${3| ,EXPORTED FROM |}"
         ],
         "description": "Generic Var declaration"
     },
-    "dataType": {
+    "dataType [QUICK]": {
         "prefix": ":dataType",
         "body": [
             ": ${2| ,INTEGER,REAL,BOOLEAN,POSITION,JOINTPOS,VECTOR,STRING[128]|}"
         ],
         "description": "Generic Var declaration"
     },
-    "STRING": {
+    "STRING [QUICK]": {
         "prefix": "STRING",
         "body": [
             "STRING[${1:lenghtString}]"
         ],
         "description": "String"
     },
-    "VAR STRING Array": {
+    "VAR STRING Array [QUICK]": {
         "prefix": "VAR,STRING,ARRAY",
         "body": [
             "VAR ${1:arrayName} : ARRAY[${2:lenghtArray}] OF STRING[${3:lenghtString}]"
         ],
         "description": "String Array"
     },
-    "VAR ARRAY DIM 1": {
+    "VAR ARRAY DIM 1 [QUICK]": {
         "prefix": "VAR,ARRAY",
         "body": [
             "VAR ${1:arrayName} : ARRAY[${2:dim}] OF ${3| ,INTEGER,REAL,BOOLEAN,POSITION,JOINTPOS,VECTOR,STRING[128]|}"
         ],
         "description": "PDL2 Array of Type"
     },
-    "VAR ARRAY DIM 2": {
+    "VAR ARRAY DIM 2 [QUICK]": {
         "prefix": "VAR,ARRAY",
         "body": [
             "VAR ${1:arrayName} : ARRAY[${2:rowNum},${3:colNum}] OF ${4| ,INTEGER,REAL,BOOLEAN,POSITION,JOINTPOS,VECTOR,STRING[128]|}"
         ],
         "description": "PDL2 Array 2 DIM of Type"
     },
-    "EXPORTED FROM": {
+    "EXPORTED FROM [QUICK]": {
         "prefix": "EXPORTED FROM",
         "body": [
             "EXPORTED FROM ${1:progName}"
         ],
         "description": "PDL2 export/import variable"
     },
-    "WRITE LUN_CRT": {
-        "prefix": "write lun_crt",
+    "WRITE LUN_CRT [QUICK]": {
+        "prefix": "WRITE LUN_CRT",
         "body": [
             "WRITE LUN_CRT($0, NL)"
         ],
         "description": "PDL2 WRITE LUN_CRT"
     },
-    "WRITE LUN_TP": {
-        "prefix": "write lun_tp",
+    "WRITE LUN_TP [QUICK]": {
+        "prefix": "WRITE LUN_TP",
         "body": [
             "WRITE LUN_TP($0, NL)"
         ],
         "description": "PDL2 WRITE LUN_TP"
     },
-    "FORMAT SPECIFIER INTEGER": {
+    "FORMAT SPECIFIER INTEGER [QUICK]": {
         "prefix": "::INT",
         "body": [
-            "::${1:Max Chars}::${3:(1 OCT - 2 HEX - 3 CHAR - 4 BIN - 5 DEC)})"
+            "::${1:Max Chars}::${2:(1 OCT - 2 HEX - 3 CHAR - 4 BIN - 5 DEC)})"
         ],
         "description": "FORMAT SPECIFIER INTEGER"
+    },
+    "ABS [BUILT-IN]": {
+        "prefix": "ABS",
+        "body": [
+            "ABS(${1:num[IN]})"
+        ],
+        "description": [
+            "Function returns the absolute value of a specified number. \n",
+            "@param num (REAL | INTEGER) — specifies a positive or negative number. number must be in the normal range for the data type. \n",
+            "@return (REAL | INTEGER) — specifies the returned value: absolute value of number, same type. For example, if number is a REAL then the returned value will be a REAL. \n",
+            "Example\n ABS(-28.3) -- result is 28.3 \n"
+        ]
+    },
+    "ACOS [BUILT-IN]": {
+        "prefix": "ACOS",
+        "body": [
+            "ACOS(${1:num[IN]})"
+        ],
+        "description": [
+            "Function returns the arc cosine of the argument. The arc cosine is measured in degrees. \n",
+            "@param num (REAL) — specifies a real number in the range of -1 to 1. \n",
+            "@return (REAL) — specifies the returned value: arc cosine of number. The result is in the range 0..180 degrees. \n",
+            "Example\n result := ACOS(0.5) -- result is 60",
+            "result := ACOS(-0.5) -- result is 120 \n"
+        ]
+    },
+    "ACT_POST [BUILT-IN]": {
+        "prefix": "ACT_POST",
+        "body": [
+            "ACT_POST(${1:err_num[IN]}, ${2:err_str[IN]})"
+        ],
+        "description": [
+            "Procedure for posting a message in the User action log. \n",
+            "@param err_num (INTEGER) — is the number of the error to be posted. \n",
+            "@param err_str (STRING) — is the message to be posted, associated to err_num. \n",
+            "Example\n ACT_POST (43009,'CEDP action') \n"
+        ]
+    },
+    "ARM_JNTP [BUILT-IN]": {
+        "prefix": "ARM_JNTP",
+        "body": [
+            "ARM_JNTP(${1:<arm_num[IN]>})"
+        ],
+        "description": [
+            "Function returns the current JOINTPOS value for a specified arm. \n",
+            "@param arm_num (INTEGER) — OPTIONAL if arm_num is not specified, the default arm is used. \n",
+            "@return (JOINTPOS) — contains the returned value: the current joint position for arm_num arm. \n",
+            "Example\n curr_jntp := ARM_JNTP \n"
+        ]
+    },
+    "ARM_POS [BUILT-IN]": {
+        "prefix": "ARM_POS",
+        "body": [
+            "ARM_POS(${1:<arm_num[IN]>})"
+        ],
+        "description": [
+            "Function returns the current POSITION value for a specified arm. \n",
+            "@param arm_num (INTEGER) — OPTIONAL if arm_num is not specified, the default arm is used. \n",
+            "@return (POSITION) — contains the returned value: the current POSITION for arm_num arm. \n",
+            "Example\n curr_pos := ARM_POS \n"
+        ]
+    },
+    "ASIN [BUILT-IN]": {
+        "prefix": "ASIN",
+        "body": [
+            "ASIN(${1:num[IN]})"
+        ],
+        "description": [
+            "Function returns the arc sine of the argument. The arcsine is measured in degrees. \n",
+            "@param num (REAL) — specifies a real number in the range of -1 to 1. \n",
+            "@return (REAL) — specifies the returned value: arc sine of number. The result is in the range -90 .. 90 degrees. \n",
+            "Example\n result := ASIN(0.5) -- result is 30",
+            "result := ASIN(-0.5) -- result is -30 \n"
+        ]
+    },
+    "ATAN2 [BUILT-IN]": {
+        "prefix": "ATAN2",
+        "body": [
+            "ATAN2(${1:y[IN]}, ${2:x[IN]})"
+        ],
+        "description": [
+            "Function calculates the arc tangent of a ratio. The arc tangent is measured in degrees. \n",
+            "@param y x (REAL) — are the cartesian coordinates of the relevant point. If x and y are both zero, an error occurs. \n",
+            "@return (REAL) — specifies the returned value: arc tangent of y/x ratio. The result is in the range of -180 to 180. The quarter of (x, y) point defines the result sign.. \n",
+            "Example\n x := ATAN2(1, -1) -- x = 135 \n"
+        ]
+    },
+    "AUX_SET [BUILT-IN]": {
+        "prefix": "AUX_SET",
+        "body": [
+            "AUX_SET(${1:flag[IN]}, ${2:aux_axis[IN]})"
+        ],
+        "description": [
+            "Procedure is used when the robot must change the electrical welding gun. The motor current and the resolver reading of the electrical welding gun must be disabled. After the new electrical welding gun has been recognized by the program, the motor currents and the resolver reading must be reenabled. \n",
+            "@param flag (BOOLEAN) — can assume the value ON or OFF. \n",
+            "@param aux_axis (INTEGER) — is used for indicating the axis of which the motor and the resolver must be disconnected (case of flag set to OFF) or connected (case of flag set to ON). If not specified, the first axis declared as electrical welding gun is referred. \n",
+            "@param arm_num (INTEGER) — OPTIONAL  indicates the arm number to which the electrical welding gun belongs. If not specified, the $PROG_ARM is used. \n",
+            "Example\n AUX_SET(ON, 8) \n"
+        ]
+    },
+    "BIT_ASSIGN [BUILT-IN]": {
+        "prefix": "BIT_ASSIGN",
+        "body": [
+            "BIT_ASSIGN(${1:var_def[IN/OUT]}, ${2:bit_num[IN]}, ${3:bool_test[IN]})"
+        ],
+        "description": [
+            "Procedure assigns the value of 1 or 0 to a bit of either an INTEGER variable or a port. The value to be assigned to the bit is the result of a comparison between BOOLEAN parameters passed to this built-in. \n",
+            "@param var_def (INTEGER) — is an INTEGER variable or port reference. A bit of this variable will be set by this built-in. \n",
+            "@param bit_num (INTEGER) —  is an INTEGER expression indicating the bit to be set. The value must be in the range 1..32, where 1 corresponds to the least significant bit of the INTEGER. The BIT_ASSIGN built-in procedure sets the bit specified by bit_num in var_ref variable to a value that is the result of the comparison between bool_test BOOLEAN variable (or port) and bool_value BOOLEAN value. \n",
+            "@param bool_test (BOOLEAN) —  If bool_test is equal to bool_value, bit_num in var_ref will assume the specified value in op_set_clear; on the contrary, bit_num will be set to the negated value of op_set_clear. \n",
+            "@param op_set_clear and bool_value (BOOLEAN) — OPTIONAL are optional parameters. If not specified, their default value is TRUE. \n",
+            "Example\n BIT_ASSIGN($AOUT[4], 2, bool_var)",
+            "-- if bool_var is TRUE, bit 2 in $AOUT[4] is set to TRUE else to FALSE\n"
+        ]
+    },
+    "BIT_CLEAR [BUILT-IN]": {
+        "prefix": "BIT_CLEAR",
+        "body": [
+            "BIT_CLEAR(${1:var_def[IN/OUT]}, ${2:bit_num[IN]})"
+        ],
+        "description": [
+            "Procedure clears a bit of an INTEGER variable. \n",
+            "@param var_def (INTEGER) — is an INTEGER variable or port reference. \n",
+            "@param bit_num (INTEGER) — is an INTEGER expression indicating the bit to be cleared. The value must be in the range 1 to 32 where 1 corresponds to the least significant bit of the INTEGER. \n",
+            "Example\n BIT_CLEAR(value, 1) \n"
+        ]
+    },
+    "BIT_SET [BUILT-IN]": {
+        "prefix": "BIT_SET",
+        "body": [
+            "BIT_SET(${1:var_def[IN/OUT]}, ${2:bit_num[IN]})"
+        ],
+        "description": [
+            "Procedure sets a bit of an INTEGER variable. \n",
+            "@param var_def (INTEGER) — is an INTEGER variable or port reference. \n",
+            "@param bit_num (INTEGER) — is an INTEGER expression indicating the bit to be cleared. The value must be in the range 1 to 32 where 1 corresponds to the least significant bit of the INTEGER. \n",
+            "Example\n BIT_SET(value, 1) \n"
+        ]
+    },
+    "BIT_TEST [BUILT-IN]": {
+        "prefix": "BIT_TEST",
+        "body": [
+            "BIT_TEST(${1:var_def[IN/OUT]}, ${2:bit_num[IN]}, ${3:bit_state[IN]})"
+        ],
+        "description": [
+            "Procedure sets a bit of an INTEGER variable. \n",
+            "@param var_def (INTEGER) — is the INTEGER value whose bit is to be tested. test_val can be an expression, a user defined variable reference, or a system port reference. \n",
+            "@param bit_num (INTEGER) — is an INTEGER value specifying the bit to be tested. The value must be in the range 1 to 32 where 1 corresponds to the least significant bit of the INTEGER. \n",
+            "@param bit_state (INTEGER) — OPTIONAL is a BOOLEAN value indicating the desired bit state to test for. If not specified, ON is assumed. \n",
+            "@return (REAL) — The returned value has the following meaning:",
+            "• TRUE -> bit_num bit, specified in test_val, is set to bit_state",
+            "• FALSE -> any other cases. \n",
+            "Example\n bool_var:= BIT_TEST(test_val, bit_num, FALSE) \n"
+        ]
+    },
+    "CHR [BUILT-IN]": {
+        "prefix": "CHR",
+        "body": [
+            "CHR(${1:str[IN/OUT]}, ${2:index[IN]}, ${3:char_code[IN]})"
+        ],
+        "description": [
+            "Procedure assigns a character, specified by its numeric code, to a STRING at an indexed position. \n",
+            "@param str (STRING) — is the STRING variable to receive the character. If str is uninitialized and index is one, then str is initialized to a length of one having a value equal to the character. If it is initialized, any position in str can be indexed. str can also be extended by one character if the new length is still in the range of the declared physical length of the STRING. If extending str would exceed the declared length, then str is not modified. \n",
+            "@param index (INTEGER) — is the position in str where the character is assigned. \n",
+            "@param char_code (INTEGER) — is the numeric code used to specify the character. \n",
+            "Example\n dest_string := 'ACCD' ",
+            "CHR(dest_string, 2, 66)-- dest_string equals 'ABCD' \n"
+        ]
+    },
+    "CLOCK [BUILT-IN]": {
+        "prefix": "CLOCK",
+        "body": [
+            "CLOCK"
+        ],
+        "description": [
+            "Function returns the current time. \n",
+            "@return (INTEGER) — The returned value is: current time in seconds counted from January 1, 1980. For example, a value of 0 indicates midnight on December 31, 1979. CLOCK is typically used to measure differences in time. If the value is negative, the hardware clock has never been set. The value is actually incremented every other second. \n",
+            "Example\n WRITE LUN_CRT(CLOCK, NL) -- let’s suppose time is 1514682000 ",
+            "DELAY 30000 -- 30 second time interval",
+            "WRITE LUN_CRT(CLOCK, NL) -- now time is 1514682030 \n"
+        ]
+    },
+    "COS [BUILT-IN]": {
+        "prefix": "COS",
+        "body": [
+            "COS(${1:angle[IN]})"
+        ],
+        "description": [
+            "Function returns the cosine of a specified angle. \n",
+            "@param angle (REAL) — is specified in degrees. \n",
+            "@return (REAL) — specifies the returned value: cosine of angle in the range of -1.0 to 1.0 \n",
+            "Example\n x := COS(87.4) -- x = 0.04536",
+            "result := ASIN(-0.5) -- result is -30 \n"
+        ]
+    },
+    "DATE [BUILT-IN]": {
+        "prefix": "DATE",
+        "body": [
+            "DATE"
+        ],
+        "description": [
+            "Function returns the current date or a date corresponding to a specified time. \n",
+            "@param date_in (INTEGER) — OPTIONAL must be passed in integer format according to the table shown below. See the example to better understand how to set up an input date value. \n",
+            "@return (STRING) — If date_in is not specified, the current date is returned. Otherwise, the date corresponding to date_in is returned. \n",
+            "Example\n x := DATE  -- 2023-07-25 16:28:52 \n"
+        ]
     },
     "ERR_POST [BUILT-IN]": {
         "prefix": "ERR_POST",
         "body": [
-            "ERR_POST(${1:err_num}, ${2:err_str}, ${3:err_sev})"
+            "ERR_POST(${1:err_num[IN]}, ${2:err_str[IN]}, ${3:err_sev[IN]})"
         ],
-        "description": "Error Message \n[UserRange 43008-44031]\n Severity: \n� 2 : Warning \n� 4 : Pause, hold if holdable \n� 6 : Pause all, hold if holdable \n� 8 : Hold \n� 10 : DRIVE OFF \n\n"
+        "description": [
+            "Procedure can be used by Users for raising an error in similar way the System does. Which type of error that is raised is defined by the supplied arguments",
+            "@param err_num (INTEGER) — is the number of the error to be posted. \n",
+            "@param err_str (STRING) — expression that contains an error message to be displayed. \n",
+            "@param err_sev (INTEGER) — expression whose value is in the range of 2 to 10. The severity specified in the ERR_POST call determines the effects on the state of the system. \n",
+            "[UserRange 43008-44031]\n",
+            "Severity: ",
+            " • 2 : Warning \n • 4 : Pause, hold if holdable \n • 6 : Pause all, hold if holdable \n • 8 : Hold \n • 10 : DRIVE OFF \n\n"
+        ]
     },
     "ERR_TRAP_ON [BUILT-IN]": {
         "prefix": "ERR_TRAP_ON",
@@ -250,65 +461,625 @@
         ],
         "description": "Procedure turns error trapping OFF \nfor the specified errors \n[from 39937 to 40109] \n\n"
     },
-    "POS": {
+    "FL_STATE [BUILT-IN]": {
+        "prefix": "FL_STATE",
+        "body": [
+            "FL_STATE(${1:file_name_str[IN]})"
+        ],
+        "description": [
+            "Function obtains information about a file. \n",
+            "@param file_name_str (STRING) — identifies the file whose information is to be obtained. The filename, excluding the device, directory path and extension, must NOT exceed 32 characters.  \n",
+            "@return (BOOLEAN) — specifies the returned value: the returned status of the performed file operation (e.g. an error if the file does not exist). Errors returned from FL_STATE can be trapped by ERR_TRAP_ON(39990) in order not to stop the program. \n",
+            "Example\n exist_bool := FL_STATE(file_name_str) \n"
+        ]
+    },
+    "JNTP_TO_POS [BUILT-IN]": {
+        "prefix": "JNTP_TO_POS",
+        "body": [
+            "JNTP_TO_POS(${1:jnt_var[IN]}, ${2:pos_var[IN]})"
+        ],
+        "description": [
+            "Procedure converts a JOINTPOS expression to either a POSITION or XTNDPOS variable. This conversion is performed using the current $BASE, $TOOL and $UFRAME; however, when calling JNTP_TO_POS built-in procedure, it is possible to pass some optional parameters which are the reference frames to be used during the conversion. \n",
+            "@param jnt_var (JOINTPOS) — is the JOINTPOS expression to be converted. \n",
+            "@param pos_var (POSITION|XTNDPOS) — is the POSITION variable that gets set to the result of the conversion. The POSITION variable can also be XTNDPOS. \n",
+            "@param base_ref (POSITION) — is the $BASE to be used while converting to POSITION/XTNDPOS. \n",
+            "@param tool_ref (POSITION) — is the $TOOL to be used while converting to POSITION/XTNDPOS. \n",
+            "@param ufr_ref (POSITION) — is the $UFRAME to be used while converting to POSITION/XTNDPOS. \n",
+            "@param dyn_flg (BOOLEAN) —  is a flag to indicate whether or not dynamic references (such as conveyors, active cooperative axes/arms, etc.) should be used while converting to POSITION/XTNDPOS. \n",
+            "@return (POSITION|XTNDPOS) — specifies the returned value of operation. \n",
+            "Example\n JNTP_TO_POS(jp1, p1) -- converts from jointpos to position \n"
+        ]
+    },
+    "LN [BUILT-IN]": {
+        "prefix": "LN",
+        "body": [
+            "LN(${1:<num[IN]>})"
+        ],
+        "description": [
+            "Function returns the natural logarithm of a number. \n",
+            "@param num (REAL) — OPTIONAL is an optional parameter that indicates the maximum limit for the generated number. If not specified, the range is between 0 and 99. \n",
+            "@return (REAL) — specifies the returned value of operation. \n",
+            "Example\n x := LN(62.4) -- x = 4.13356 \n"
+        ]
+    },
+    "ORD [BUILT-IN]": {
+        "prefix": "ORD",
+        "body": [
+            "ORD(${1:src_string[IN]}, ${2:index[IN]})"
+        ],
+        "description": [
+            "Function returns the numeric ASCII code of a character in a STRING. To operate on characters having an ASCII code greater than 127, it is needed to set bit 17 of $PROG_CNFG: Program configuration, to 1. \n",
+            "@param src_string (STRING) — is the STRING containing the character. \n",
+            "@param index (INTEGER) — x is the position in src_string of the character whose ASCII value is to be returned. If index is less than one or greater than the current length of src_string, an error occurs. \n",
+            "@return (INTEGER) — The returned value is the numeric ASCII code of the passed character (included in src_string at index position). \n",
+            "Example\n src_string := ABCDEF",
+            "x := ORD(src_string, 2) -- x now equals 66 (ASCII for B) \n"
+        ]
+    },
+    "POS [BUILT-IN]": {
         "prefix": "POS",
         "body": [
-            "POS(${1:x}, ${2:y}, ${3:z}, ${4:a}, ${5:e}, ${6:r}, '')"
+            "POS(${1:x[IN]}, ${2:y[IN]}, ${3:z[IN]}, ${4:e1[IN]}, ${5:e2[IN]}, ${6:e3[IN]}, '')"
         ],
-        "description": "POSITION"
+        "description": [
+            "Function returns a POSITION composed of the specified location components, Euler angles, and configuration \n",
+            "@param x,y,z (REAL) — specify the Cartesian coordinates of a position. \n",
+            "@param e1,e2,e3 (REAL) — specify the Euler angles of a position. \n",
+            "@param cnfg (STRING) — specifies the configuration string of a position. \n",
+            "@return (POSITION) — Returns a POSITION. \n",
+            "Example\n curpos := POS(50, 100, 0, 0, -90, 0, '') -- creates POSITION \n"
+        ]
+    },
+    "POS_FRAME [BUILT-IN]": {
+        "prefix": "POS_FRAME",
+        "body": [
+            "POS_FRAME(${1:corner[IN]}, ${2:x[IN]}, ${3:xy[IN]})"
+        ],
+        "description": [
+            "Function returns the frame specified by three or four Cartesian positions. \n",
+            "@param corner (POSITION) — is the first of the three (or four) positions which define the uframe. \n",
+            "@param x (POSITION) — is a position on the x-axis. The x-axis of the new frame is parallel to a line defined by the points corner and x. \n",
+            "@param xy (POSITION) — is a position on the xy-plane. The xy-plane is parallel to a plane defined by the points corner, x, and xy. xy is on the positive half of the xy-plane. The y-axis is on the xy-plane and is perpendicular to the x-axis. The z-axis is perpendicular to the xy-plane and intersects both the x- and y- axes. The positive direction on the z-axis is found using the right hand rule. \n",
+            "@param orig (POSITION) — OPTIONAL is the origin of the new frame. If orig is not specified, then corner is used as the origin. \n",
+            "Example\n $UFRAME := POS_FRAME(origin, xaxis, xyplane) \n"
+        ]
+    },
+    "POS_IN_RANGE [BUILT-IN]": {
+        "prefix": "POS_IN_RANGE",
+        "body": [
+            "POS_IN_RANGE(${1:test_pos[IN]}, ${2:bool_ans[OUT]})"
+        ],
+        "description": [
+            "Procedure sets a BOOLEAN value indicating whether a POSITION, JOINTPOS, or XTNDPOS value is in the range of a specified arm. This test is performed using the current $BASE, $TOOL and $UFRAME; however, when calling POS_IN_RANGE built-in procedure, it is possible to pass some optional parameters which are the reference frames to be used while testing. \n",
+            "@param test_pos (POSITION | JOINTPOS | XTNDPOS) —  is the position to be tested, to know whether it is in the range of the specified Arm. \n If no optional parameters are passed, current $BASE and $TOOL apply to test_pos. \n",
+            "@param bool_ans (BOOLEAN) —  is set to TRUE if the arm can reach test_pos without stroke-end errors or cartesian position out of range error; otherwise, it is set to FALSE. \n",
+            "@param arm_num (INTEGER) —  OPTIONAL If arm_num is not specified, the default arm is used. \n",
+            "@param base_ref (POSITION) — OPTIONAL is the $BASE to be used while testing. \n",
+            "@param tool_ref (POSITION) — OPTIONAL  is the $TOOL to be used while testing. \n",
+            "@param ufr_ref (POSITION) — OPTIONAL  is the $UFRAME to be used while testing. \n",
+            "@param dyn_flg (BOOLEAN) — OPTIONAL is a flag to indicate whether or not dynamic references (such as conveyors, active cooperative axes/arms, etc.) should be used while testing. \n",
+            "Example\n POS_IN_RANGE(posn, bool) \n"
+        ]
+    },
+    "POS_INV [BUILT-IN]": {
+        "prefix": "POS_INV",
+        "body": [
+            "POS_INV(${1:source_pos[IN]})"
+        ],
+        "description": [
+            "Function returns the inverse of a Cartesian position. \n",
+            "@param source_pos (POSITION) — is the source position. \n",
+            "@return (POSITION) — The returned value is the inverse of source_pos. The configuration of the returned value is the one of source_pos. \n",
+            "Example\n flange_pos := posn : POS_INV ($TOOL) \n flange_pos represent the position of the flange frame when the TCP is in posn. \n"
+        ]
+    },
+    "POS_SHIFT [BUILT-IN]": {
+        "prefix": "POS_SHIFT",
+        "body": [
+            "POS_SHIFT(${1:posn[IN/OUT]}, ${2:shf_vec[IN]})"
+        ],
+        "description": [
+            "Procedure shifts a Cartesian position by a specified VECTOR. \n",
+            "@param posn (POSITION) — is the POSITION variable to be shifted. If it is uninitialized, an error will occur. \n",
+            "@param shf_vec (VECTOR) — is the vector by which to shift posn. Its components are added to the location components of posn. \n",
+            "Example\n v1 := VEC(0, 100, 0) -- creates vector \n",
+            " POS_SHIFT(p1, v1) -- shifts position by vector \n"
+        ]
+    },
+    "POS_TO_JNTP [BUILT-IN]": {
+        "prefix": "POS_TO_JNTP",
+        "body": [
+            "POS_TO_JNTP(${1:pos_var[IN]}, ${2:jnt_var[IN]})"
+        ],
+        "description": [
+            "Procedure converts a POSITION or XTNDPOS expression to a JOINTPOS variable. This conversion is performed using the current $BASE, $TOOL and $UFRAME; however, when calling POS_TO_JNTP built-in procedure, it is possible to pass some optional parameters which are the reference frames to be used during the conversion. \n",
+            "@param pos_var (POSITION|XTNDPOS) — is the POSITION or XTNDPOS expression to be converted. \n",
+            "@param jnt_var (JOINTPOS) — is the JOINTPOS variable that results from the conversion. \n",
+            "@param base_ref (POSITION) — OPTIONAL is the $BASE to be used while converting to JOINTPOS. \n",
+            "@param tool_ref (POSITION) — OPTIONAL is the $TOOL to be used while converting to JOINTPOS. \n",
+            "@param ufr_ref (POSITION) — OPTIONAL is the $UFRAME to be used while converting to JOINTPOS. \n",
+            "@param dyn_flg (BOOLEAN) — OPTIONAL  is a flag to indicate whether or not dynamic references (such as conveyors, active cooperative axes/arms, etc.) should be used while converting to JOINTPOS. \n",
+            "Example\n POS_TO_JNTP(jp1, p1) -- converts from jointpos to position \n"
+        ]
+    },
+    "PROG_STATE [BUILT-IN]": {
+        "prefix": "PROG_STATE",
+        "body": [
+            "PROG_STATE(${1:prog_name[IN]}, ${2:<line_num[OUT]>}, ${3:<rout_name[OUT]>}, ${4:<ext_prog_name[OUT]>})"
+        ],
+        "description": [
+            "Function returns the current state of a program, as well as the program name, the line number being executed, the name of the being executed routine and the owning program. \n",
+            "@param prog_name (STRING) — is the name of the program for which the current state is to be returned. An error will occur if the program does not exist. \n",
+            "@param line_num (INTEGER) — is the returned number of the being executed line. \n",
+            "@param rout_name (STRING) —  is the returned name of the being executed routine. \n",
+            "@param ext_prog_name (STRING) — is the returned name of the program which owns the being executed routine. \n",
+            "@return (INTEGER) — The returned value is an INTEGER mask indicating the program state. Only some of the bits in the mask will have meaning for the user, other bits have internal uses and are reserved. \n",
+            "The user should filter the returned value from PROG_STATE, ANDing it with 0x7FFF. If the program is not active, all bits are set to 1. Other common values are the following: ",
+            "• 0  : active and running",
+            "• <0 : not active",
+            "• -1 : unknown program",
+            "• -2 : loaded, but not active",
+            "• >0 : suspended for some reason; please NOTE THAT more than one bit could be set, in the mask, at the same time.",
+            "• 2 : paused",
+            "• 4 : ready state (i.e. held)",
+            "• 6 : ready-paused",
+            "• 8 : deactivating",
+            "• 16 : under editor control",
+            "• 32 : asynchronous WRITE",
+            "• 64 : waiting on a READ completion",
+            "• 128 : waiting on a WAIT FOR statement",
+            "• 256 : motion currently in progress",
+            "• 512 : SYS_CALL currently in progress",
+            "• 1024 : DELAY currently in progress",
+            "• 2048 : waiting on a WAIT statement",
+            "• 4096 : PULSE currently in progress",
+            "• 8192 : waiting for End Of Motion",
+            "• 32768 (0x8000) : waiting for 'E' to complete",
+            "• 131072 (0x020000) : Asynchronous DV_CNRTL",
+            "• 262144 (0x040000) : Motion built-in - e.g. POS_TO_JNTP",
+            "• 524288 (0x800000) : VP2_UPDATE or other VP2 change",
+            "• 1048576 (0x100000) : Condition being defined/purged",
+            "• 2097152 (0x200000) : Dynamic Modification being undertaken"
+        ]
+    },
+    "RANDOM [BUILT-IN]": {
+        "prefix": "RANDOM",
+        "body": [
+            "RANDOM(${1:<max_num[IN]>})"
+        ],
+        "description": [
+            "Function returns an INTEGER random number. \n",
+            "@param max_num (INTEGER) —  is an optional parameter that indicates the maximum limit for the generated number. If not specified, the range is between 0 and 99. \n",
+            "@return (INTEGER) — return random value. \n"
+        ]
+    },
+    "ROUND [BUILT-IN]": {
+        "prefix": "ROUND",
+        "body": [
+            "ROUND(${1:num[IN]})"
+        ],
+        "description": [
+            "Function rounds off a REAL number to return an INTEGER result. \n",
+            "@param num (REAL) — is being rounded REAL value. \n",
+            "@return (INTEGER) — The returned value is rounded down if num has a decimal value greater than 0.0 and less than 0.5. If the value is greater than or equal to 0.5 it will be rounded up. \n",
+            "This function can be used to convert a REAL expression into an INTEGER value \n",
+            "Example\n x := ROUND(96.5) -- result is 97 \n"
+        ]
+    },
+    "SIN [BUILT-IN]": {
+        "prefix": "SIN",
+        "body": [
+            "SIN(${1:angle[IN]})"
+        ],
+        "description": [
+            "Function returns the sine of a specified angle. \n",
+            "@param angle (REAL) — is measured in degrees. \n",
+            "@return (REAL) — specifies the returned value of operation. The returned value is always in the range of -1.0 to 1.0.\n",
+            "Example\n x := SIN(60) -- x = 0.866025 \n"
+        ]
+    },
+    "SQRT [BUILT-IN]": {
+        "prefix": "SQRT",
+        "body": [
+            "SQRT(${1:num[IN]})"
+        ],
+        "description": [
+            "Function returns the square root of a specified number. \n",
+            "@param num (REAL) — If num <0, an error occurs. \n",
+            "@return (REAL) — specifies the returned value of operation. \n",
+            "Example\n x := SQRT(276.971) -- x = 16.6424 \n"
+        ]
+    },
+    "STR_CAT [BUILT-IN]": {
+        "prefix": "STR_CAT",
+        "body": [
+            "STR_CAT(${1:source_string1[IN]}, ${2:source_string2[IN]})"
+        ],
+        "description": [
+            "Function joins two strings. This built-in function applies both to ASCII strings and UNICODE strings.\n",
+            "@param source_string1 (STRING) — is the string which source_string2 is to be appended to.\n",
+            "@param source_string2 (STRING) — is the string to be appended to source_string1 \n",
+            "@return (STRING) — specifies the returned value: the result of appending the value of source_string2 to the value of source_string1. \n"
+        ]
+    },
+    "STR_DEL [BUILT-IN]": {
+        "prefix": "STR_DEL",
+        "body": [
+            "STR_DEL(${1:source_string[IN/OUT]}, ${2:start_index[IN]}, ${3:char_number[IN]})"
+        ],
+        "description": [
+            "Function deletes a sequence of characters from a STRING. \n",
+            "@param source_string (STRING) — is the string in which one or more characters are to be deleted. If it is uninitialized, an error occurs. \n",
+            "@param start_index (INTEGER) — is the index indicating where in source_string the deletion will start. If it is greater than the maximum size of source_string, the built-in has no effect. If it is less than one, an error occurs. \n",
+            "@param chars_number (INTEGER) — is the total number of characters to be deleted. If it is greater than the number of characters from start_index to the end of source_string, then all of the characters past start_index are deleted. If it is less than one, an error occurs. \n"
+        ]
+    },
+    "STR_EDIT [BUILT-IN]": {
+        "prefix": "STR_EDIT",
+        "body": [
+            "STR_EDIT(${1:source_string[IN/OUT]}, ${2:operator[IN]})"
+        ],
+        "description": [
+            "Procedure performs various editing and conversions on the specified string. \n",
+            "@param source_string (STRING) — is the STRING to be modified. \n",
+            "@param operator (INTEGER) — is an INTEGER value which indicates the operation to be performed on the source_string. Several string operators can be combined using the OR operator. The following predefined constants represent the different operations to be performed on the STRING: \n",
+            "• STR_LWR - Converts all upper case characters to lower case.",
+            "• STR_UPR - Converts all lower case characters to upper case.",
+            "• STR_TRIM - Removes leading and trailing blanks, tabs and new line characters.",
+            "• STR_COMP - Converts multiple whitespace characters to a single character.",
+            "• STR_COLL - Removes all whitespace characters from the source string."
+        ]
+    },
+    "STR_INS [BUILT-IN]": {
+        "prefix": "STR_INS",
+        "body": [
+            "STR_INS(${1:source_string[IN/OUT]}, ${2:start_index[IN]}, ${3:insert_string[IN]})"
+        ],
+        "description": [
+            "Procedure inserts a sequence of characters into a STRING. \n",
+            "@param source_string (STRING) — is the STRING to be modified. If it is uninitialized, then start_index must be zero or an error occurs. \n",
+            "@param start_index (INTEGER) — is an index indicating where, in source_string, the new sequence of characters is to be inserted. start_index must be between one and the current length of the string. A value out of this range will cause an error even if the string has a max length greater than the length of its current value. \n",
+            "@param insert_string (STRING) — is the new sequence of characters. If the result is greater than the declared length of source_string, then it is truncated. insert_string is inserted into source_string, not written over it. \n"
+        ]
+    },
+    "STR_LEN [BUILT-IN]": {
+        "prefix": "STR_LEN",
+        "body": [
+            "STR_LEN(${1:source_string[IN]}, ${2:<flag[IN]>})"
+        ],
+        "description": [
+            "Function returns the current length of a STRING. It applies both to the ASCII strings and to the UNICODE strings. \n",
+            "@param source_string (STRING) — is the source string expression. \n",
+            "@param operator (INTEGER) — is an optional parameter with the following meaning:",
+            "• 0 or not present - source_string current length is returned.",
+            "• 1 - source_string maximum length (i.e. the declared one) is returned.",
+            "• 2 - source_string is a UNICODE string; its current length is returned.\n",
+            "@return (INTEGER) — specifies the returned value: current length of source_string, according to what specified by flag parameter. \n"
+        ]
     },
     "STR_LOC [BUILT-IN]": {
         "prefix": "STR_LOC",
         "body": [
-            "STR_LOC(${1:original_string}, ${2:find_me}, ${3:<start_from>})"
+            "STR_LOC(${1:original_string[IN]}, ${2:find_me[IN]}, ${3:<start_from[IN]>})"
         ],
-        "description": "Function returns the location, in a STRING, where a specified sequence of characters begins. \n - original_string: is the string in which find_me is to be searched for. \n - find_me: is the string to be searched for; if find_me is not found, zero is returned. \n - start_from: is an optional integer parameter which indicates the direction of searching and the index where to start searching. \n   If not specified or 0, find_me is searched for starting from the beginning of original_string"
+        "description": [
+            "Function returns the location, in a STRING, where a specified sequence of characters begins. \n",
+            "@param original_string (STRING) — is the string in which find_me is to be searched for. \n",
+            "@param find_me (STRING) — is the string to be searched for; if find_me is not found, 0 is returned. \n",
+            "@param start_from (INTEGER) — is an optional integer parameter which indicates the direction of searching and the index where to start searching. \n   If not specified or 0, find_me is searched for starting from the beginning of original_string \n",
+            "@return (INTEGER) — specifies the returned value, the position in which find_me is found inside the original_string. \n"
+        ]
+    },
+    "STR_OVS [BUILT-IN]": {
+        "prefix": "STR_OVS",
+        "body": [
+            "STR_OVS(${1:source_string[IN/OUT]}, ${2:start_index[IN]}, ${3:replace_string[IN]}, ${4:<num_chars[IN]>})"
+        ],
+        "description": [
+            "Procedure replaces a sequence of characters in a STRING with a new sequence of characters. \n",
+            "@param source_string (STRING) — is the STRING to be modified. If this is uninitialized, an error occurs. \n",
+            "@param start_index (INTGER) — is an index indicating where, in source_string, the new sequence is to start. start_index must be between zero and the current length of the STRING.\n A value out of this range will cause an error even if the STRING has a maximum length greater than the length of its current value. \n",
+            "@param replace_string (STRING) — is the new sequence of characters. If the result is greater than the declared length of source_string, then it is truncated. \n",
+            "@param num_chars (INTEGER) — is an optional parameter, indicating the total amount of characters to be taken into consideration from the replace_string, while replacing. \n"
+        ]
     },
     "STR_XTRT [BUILT-IN]": {
         "prefix": "STR_XTRT",
         "body": [
-            "STR_XTRT(${1:source_str}, ${2:start_index}, ${3:substring_length}, ${4:dest_str})"
+            "STR_XTRT(${1:source_str[IN]}, ${2:start_index[IN]}, ${3:substring_length[IN]}, ${4:dest_str[OUT]})"
         ],
-        "description": "The STR_XTRT built-in procedure obtains a substring from a specified STRING. \n - source_string: is the source STRING which the substring is to be extracted from. It will remain unchanged. \n - start_index: is an index indicating where to start copying. \n - start_index: must be between zero and the current length of the source_str. A value out of this range will cause an error even if the source_str has a maximum length greater than the length of its current value. \n - substring_length: is the number of being copied characters. If it is <0, an error will occur. If it is >= the number of characters from start_index to the end of source_string, then all characters are copied into dest_string. \n - dest_string: is the STRING that will hold the copied substring. If the length of the result is greater than the declared length of dest_string, then the result is truncated.\n"
+        "description": [
+            "Procedure obtains a substring from a specified STRING. \n",
+            "@param source_string (STRING) — is the source STRING which the substring is to be extracted from. It will remain unchanged. \n",
+            "@param start_index (INTEGER) — is an index indicating where to start copying. \n start_index: must be between zero and the current length of the source_str. A value out of this range will cause an error even if the source_str has a maximum length greater than the length of its current value. \n",
+            "@param substring_length (INTEGER) — is the number of being copied characters. If it is <0, an error will occur. If it is >= the number of characters from start_index to the end of source_string, then all characters are copied into dest_string. \n ",
+            "@param dest_string (STRING) — is the STRING that will hold the copied substring. If the length of the result is greater than the declared length of dest_string, then the result is truncated.\n"
+        ]
     },
-    
-    "MOVE TO": {
+    "SYS_CALL [BUILT-IN]": {
+        "prefix": "SYS_CALL",
+        "body": [
+            "SYS_CALL(${1:cmd_string[IN]}, ${2:param[IN]})"
+        ],
+        "description": [
+            "Procedure performs the specified system command. \n",
+            "@param cmd_string (STRING) \n",
+            "@param param (STRING) \n"
+        ]
+    },
+    "TAN [BUILT-IN]": {
+        "prefix": "TAN",
+        "body": [
+            "TAN(${1:angle[IN]})"
+        ],
+        "description": [
+            "Function returns the tangent of a specified angle. \n",
+            "@param angle (REAL) — is specified in degrees. \n",
+            "@return (REAL) — specifies the returned value of operation. \n"
+        ]
+    },
+    "TRUNC [BUILT-IN]": {
+        "prefix": "TRUNC",
+        "body": [
+            "TRUNC(${1:value[IN]})"
+        ],
+        "description": [
+            "Function truncates a REAL value to obtain an INTEGER result. \n",
+            "@param value (REAL) — is a REAL expression to be truncated to produce an INTEGER result. This function can be used to convert a REAL expression into an INTEGER value. \n",
+            "@return (INTEGER) — specifies the returned value of operation. \n",
+            "Example\n x := TRUNC(16.35) -- x is assigned 16 \n"
+        ]
+    },
+    "VAR_UNINIT [BUILT-IN]": {
+        "prefix": "VAR_UNINIT",
+        "body": [
+            "VAR_UNINIT(${1:var_ref[IN]})"
+        ],
+        "description": [
+            "Function tests a variable reference to see if it is uninitialized and returns a BOOLEAN result. \n",
+            "@param var_ref (ANY) — is the variable to be tested. It can be a single variable reference (my_var), an array element reference (ary_var[43]), or a field reference (fld_var.fld_name). \n",
+            "@return (BOOLEAN) — If var_ref has not been given a value, TRUE is returned. Otherwise, FALSE is returned. \n"
+        ]
+    },
+    "VEC [BUILT-IN]": {
+        "prefix": "VEC",
+        "body": [
+            "VEC(${1:x[IN]}, ${2:y[IN]}, ${3:z[IN]})"
+        ],
+        "description": [
+            "Function returns a VECTOR created from the three specified REAL components. \n",
+            "@param x,y,z (REAL) — represent the Cartesian components from which the returned VECTOR is composed. \n",
+            "@return (VECTOR) — Returns (x, y, z,) components vector. \n",
+            "Example\n v1 := VEC(0, 100, 0) -- creates vector \n"
+        ]
+    },
+    "MOVE TO [QUICK]": {
         "prefix": "MOVE TO",
         "body": [
             "${1|MOVE,MOVEFLY|} ${2|TO,LINEAR TO,JOINT TO|} ${3:destination} ${4| ,ADVANCE|}"
         ],
         "description": "MOVE TO moves the designated arm to a specified destination.\n\n"
     },
-    
-    "MOVE ABOUT": {
+    "MOVE ABOUT [QUICK]": {
         "prefix": "MOVE ABOUT",
         "body": [
             "MOVE ABOUT VEC(0, 0, 0) BY ${1:rotation in degrees} IN ${2|TOOL,BASE,UFRAME|}"
         ],
         "description": "MOVE ABOUT allows the programmer to specify a destination that is reached by rotating the tool an angular distance about a specified vector from the current position. The angle, a real expression, represents the rotation in degrees about the vector, using the specified coordinate frame.\n\n"
     },
-
-    "MOVE RELATIVE": {
+    "MOVE RELATIVE [QUICK]": {
         "prefix": "MOVE RELATIVE",
         "body": [
             "MOVE ${1|RELATIVE,LINEAR RELATIVE|} VEC(0, 0, 0) IN ${2|TOOL,BASE,UFRAME|}"
         ],
         "description": "MOVE RELATIVE allows the programmer to specify a destination relative to the current location of the arm. The destination is indicated by a vector expression, measured in millimeters, using the specified coordinate frame.\n\n"
     },
-
-    "MOVE NEAR": {
+    "MOVE NEAR [QUICK]": {
         "prefix": "MOVE NEAR",
         "body": [
             "MOVE NEAR ${1:destination} BY ${2: distance from a position [mm]}"
         ],
         "description": "MOVE NEAR allows the programmer to specify a destination along the tool approach vector that is within a specified distance from a position.\n\n"
     },
-    
-    "MOVE AWAY": {
+    "MOVE AWAY [QUICK]": {
         "prefix": "MOVE AWAY",
         "body": [
             "MOVE AWAY ${1: distance away from the current position [mm]}"
         ],
         "description": "MOVE AWAY allows the programmer to specify a destination along the tool approach vector that is a specified distance away from the current position.\n\n"
-    }
+    },
+
+    "MOVE TO WITH $ARM OVR [QUICK]": {
+        "prefix": "MOVE TO",
+        "body": [
+            "${1|MOVE,MOVEFLY|} ${2|TO,LINEAR TO,JOINT TO|} ${3:destination} ${4| ,ADVANCE|},",
+            "  WITH \\$ARM_SPD_OVR = ${5: override},",
+            "  WITH \\$ARM_ACC_OVR = ${5: override},",
+            "  WITH \\$ARM_DEC_OVR = ${5: override},",
+            "ENDMOVE"
+        ],
+        "description": "MOVE TO moves the designated arm to a specified destination with $ARM override.\n\n"
+    },
+    
+    "MOVE TO WITH $PROG OVR [QUICK]": {
+        "prefix": "MOVE TO",
+        "body": [
+            "${1|MOVE,MOVEFLY|} ${2|TO,LINEAR TO,JOINT TO|} ${3:destination} ${4| ,ADVANCE|},",
+            "  WITH \\$PROG_SPD_OVR = ${5: override},",
+            "  WITH \\$PROG_ACC_OVR = ${5: override},",
+            "  WITH \\$PROG_DEC_OVR = ${5: override},",
+            "ENDMOVE"
+        ],
+        "description": "MOVE TO moves the designated arm to a specified destination with $PROG override.\n\n"
+    },
+    "ON [KEYWORD]": {
+        "prefix": "ON",
+        "body": [
+            "ON"
+        ],
+        "description": "ON \n"
+    },
+    "TRUE [KEYWORD]": {
+        "prefix": "TRUE",
+        "body": [
+            "TRUE"
+        ],
+        "description": "TRUE \n"
+    },
+    "OFF [KEYWORD]": {
+        "prefix": "OFF",
+        "body": [
+            "OFF"
+        ],
+        "description": "OFF \n"
+    },
+    "FALSE [KEYWORD]": {
+        "prefix": "FALSE",
+        "body": [
+            "FALSE"
+        ],
+        "description": "FALSE \n"
+    },
+    "$IN [QUICK]": {
+        "prefix": "$IN",
+        "body": [
+            "\\$IN[${1:index}] := ${2:state}"
+        ],
+        "description": "$IN \n"
+    },
+    "$OUT [QUICK]": {
+        "prefix": "$OUT",
+        "body": [
+            "\\$OUT[${1:index}] := ${2:state}"
+        ],
+        "description": "$OUT \n"
+    },
+    "$DIN [QUICK]": {
+        "prefix": "$DIN",
+        "body": [
+            "\\$DIN[${1:index}] := ${2:state}"
+        ],
+        "description": "$DIN \n"
+    },
+    "$DOUT [QUICK]": {
+        "prefix": "$DOUT",
+        "body": [
+            "\\$DOUT[${1:index}] := ${2:state}"
+        ],
+        "description": "$DOUT \n"
+    },
+    "$FMI [QUICK]": {
+        "prefix": "$FMI",
+        "body": [
+            "\\$FMI[${1:index}] := ${2:value}"
+        ],
+        "description": "$FMI \n"
+    },
+    "$FMO [QUICK]": {
+        "prefix": "$FMO",
+        "body": [
+            "\\$FMO[${1:index}] := ${2:value}"
+        ],
+        "description": "$FMO \n"
+    },
+    "LABEL JUMP START [QUICK]": {
+        "prefix": "GOTO ",
+        "body": [
+            "GOTO ${1:label}"
+        ],
+        "description": "GOTO LABEL JUMP START \n"
+    },
+    "LABEL JUMP END [QUICK]": {
+        "prefix": "GOTO",
+        "body": [
+            "${1:label}::"
+        ],
+        "description": "GOTO LABEL JUMP END \n"
+    },
+    "DELAY [QUICK]": {
+        "prefix": "DELAY",
+        "body": [
+            "DELAY ${1:insert_INTEGER [ms]}"
+        ],
+        "description": "DELAY \n"
+    },
+    "WAIT FOR [QUICK]": {
+        "prefix": "WAIT FOR",
+        "body": [
+            "WAIT FOR $0"
+        ],
+        "description": "WAIT FOR \n"
+    },
+    "$TIMER (ms) [QUICK]": {
+        "prefix": "$TIMER",
+        "body": [
+            "\\$TIMER[${1:index}]"
+        ],
+        "description": [
+        "Clock timer (in millisecond) \n",
+        "It represents 1 millisecond timers available for use in PDL2 programs. ",
+        "The number of elements is dependant on the predefined variable $NUM_TIMERS: Number of timers",
+        "Timer elements can be attached by different programs. \n"
+        ]
+    },
+    "$TIMER_S (s) [QUICK]": {
+        "prefix": "$TIMER_S",
+        "body": [
+            "\\$TIMER_S[${1:index}]"
+        ],
+        "description": [
+        "Clock timer (in seconds) \n",
+        "It represents 1 second timers available for use in PDL2 programs. ",
+        "The number of elements is dependant on the predefined variable $NUM_TIMERS: Number of timers ",
+        "Timer elements can be attached by different programs. \n"
+        ]
+    },
+    "$PROG_TIMER_O (ms) [QUICK]": {
+        "prefix": "$PROG_TIMER_O",
+        "body": [
+            "\\$PROG_TIMER_O[${1:index}]"
+        ],
+        "description": [
+        "Program timer - owning context specific (in millisecond) \n",
+        "It represents 1 millisecond timers.  ",
+        "There are $NUM_PROG_TIMERS. ",
+        "Such timers are specific for program owning context.\n"
+        ]
+    },
+    "$PROG_TIMER_OS (s) [QUICK]": {
+        "prefix": "$PROG_TIMER_OS",
+        "body": [
+            "\\$PROG_TIMER_OS[${1:index}]"
+        ],
+        "description": [
+        "Program timer - owning context specific (in seconds) \n",
+        "It represents 1 second timers.",
+        "There are $NUM_PROG_TIMERS.",
+        "Such timers are specific for program owning context.\n"
+        ]
+    },
+    "$PROG_TIMER_X (ms) [QUICK]": {
+        "prefix": "$PROG_TIMER_X",
+        "body": [
+            "\\$PROG_TIMER_X[${1:index}]"
+        ],
+        "description": [
+        "Program timer - execution context specific (in millisecond) \n",
+        "It represents 1 millisecond timers.  ",
+        "There are $NUM_PROG_TIMERS.",
+        "Such timers are specific for program executing context.\n"
+        ]
+    },
+    "$PROG_TIMER_XS (ms) [QUICK]": {
+        "prefix": "$PROG_TIMER_XS",
+        "body": [
+            "\\$PROG_TIMER_XS[${1:index}]"
+        ],
+        "description": [
+        "Program timer - execution context specific (in seconds) \n",
+        "It represents 1 second timers. ",
+        "There are $NUM_PROG_TIMERS.",
+        "Such timers are specific for program executing context.\n"
+        ]
+    },
 }
