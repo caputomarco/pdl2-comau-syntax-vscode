@@ -1,6 +1,0 @@
-vsce package
-vsce login MarcoCaputo
-alve7hslsswo4tx3dsy3waep5k56p5f4eisbqwlyjhggrjkosx3q
-
-vsce publish
-pause
