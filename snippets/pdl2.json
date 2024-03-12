@@ -645,7 +645,7 @@
     "PULSE [QUICK]": {
         "prefix": "PULSE",
         "body": [
-            "PULSE ${1| ,$IN,$OUT,$DIN,$DOUT|([${2:index}])}, ${3:time [ms]}"
+            "PULSE ${1| ,$IN,$OUT,$DIN,$DOUT|}{([${2:index}])}, ${3:time [ms]}"
         ],
         "description":[
             "Function to turn a desired IO ON and then after a specified amount of time turn it OFF"
