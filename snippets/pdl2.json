@@ -643,7 +643,7 @@
         ]
     },
     "PULSE [QUICK]": {
-        "prefix": ,
+        "prefix": "PULSE",
         "body": [
             "PULSE ${1| ,$IN,$OUT,$DIN,$DOUT|([${2:index}])}, ${3:time [ms]}"
         ],
