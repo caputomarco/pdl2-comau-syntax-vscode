@@ -642,6 +642,15 @@
             "• 2097152 (0x200000) : Dynamic Modification being undertaken"
         ]
     },
+    "PULSE [QUICK]": {
+        "prefix": "PULSE",
+        "body": [
+            "PULSE ${1| ,$IN,$OUT,$DIN,$DOUT|}[${2:index}], ${3:time [ms]}"
+        ],
+        "description":[
+            "Function to turn a desired IO ON and then after a specified amount of time turn it OFF"
+        ]
+    },
     "RANDOM [BUILT-IN]": {
         "prefix": "RANDOM",
         "body": [
