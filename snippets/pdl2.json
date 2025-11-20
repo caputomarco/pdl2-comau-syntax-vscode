@@ -642,6 +642,15 @@
             "• 2097152 (0x200000) : Dynamic Modification being undertaken"
         ]
     },
+    "PULSE [QUICK]": {
+        "prefix": "PULSE",
+        "body": [
+            "PULSE ${1| ,$IN,$OUT,$DIN,$DOUT|}[${2:index}], ${3:time [ms]}"
+        ],
+        "description":[
+            "Function to turn a desired IO ON and then after a specified amount of time turn it OFF"
+        ]
+    },
     "RANDOM [BUILT-IN]": {
         "prefix": "RANDOM",
         "body": [
@@ -954,19 +963,33 @@
         ],
         "description": "$OUT \n"
     },
-    "$DIN [QUICK]": {
+    "$DIN [SET]": {
         "prefix": "$DIN",
         "body": [
             "\\$DIN[${1:index}] := ${2:state}"
         ],
-        "description": "$DIN \n"
+        "description": "Set $DIN to the specified state \n"
     },
-    "$DOUT [QUICK]": {
+    "$DIN [READ]": {
+        "prefix": "$DIN",
+        "body": [
+            "\\$DIN[${1:index}] = ${2:state}"
+        ],
+        "description": "Read if the value of $DIN is in specified state \n"
+    },
+    "$DOUT [SET]": {
         "prefix": "$DOUT",
         "body": [
             "\\$DOUT[${1:index}] := ${2:state}"
         ],
-        "description": "$DOUT \n"
+        "description": "Set $DOUT to the specified state \n"
+    },
+    "$DOUT [READ]": {
+        "prefix": "$DOUT",
+        "body": [
+            "\\$DOUT[${1:index}] := ${2:state}"
+        ],
+        "description": "Read if the value of $DOUT is in specified state \n"
     },
     "$FMI [QUICK]": {
         "prefix": "$FMI",
