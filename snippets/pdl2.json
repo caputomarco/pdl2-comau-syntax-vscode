@@ -645,7 +645,7 @@
     "PULSE [QUICK]": {
         "prefix": "PULSE",
         "body": [
-            "PULSE ${1| ,$IN,$OUT,$DIN,$DOUT|}[${2:index}], ${3:time [ms]}"
+            "PULSE ${1| ,$IN,$OUT,$DIN,$DOUT|}[${2:index}] FOR ${3:time [ms]} ${4| ,ADVANCE|}"
         ],
         "description":[
             "Function to turn a desired IO ON and then after a specified amount of time turn it OFF"
@@ -1104,5 +1104,5 @@
         "There are $NUM_PROG_TIMERS.",
         "Such timers are specific for program executing context.\n"
         ]
-    },
+    }
 }
